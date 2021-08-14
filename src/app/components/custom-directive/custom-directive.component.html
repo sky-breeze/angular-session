@@ -1,0 +1,52 @@
+<p>custom-directive works!</p>
+<div class="container" style="text-align: center;">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-primary" (click)="evenOdd=!evenOdd">Show odd and Even Number</button>
+            <br><br>
+            <hr>
+            <ul class="list-group">
+                <div *ngIf=evenOdd>
+                    <li class="list-group-item" [ngClass]="{evenClass: even%2==0 }"
+                        [ngStyle]="{backgroundColor:even%2==0 ? 'yellow':'transparent' }"
+                        *ngFor="let even of evenNumber">{{even}}</li>
+                </div>
+
+                <div *ngIf="!evenOdd">
+                    <li class="list-group-item" [ngClass]="{oddClass: odd%2!=0 }"
+                        [ngStyle]="{backgroundColor:odd%2==0 ? 'yellow':'transparent' }" *ngFor="let odd of oddNumber">
+                        {{odd}}</li>
+                </div>
+                <ng-template [ngIf]="!evenOdd">
+                    <div >
+                        <li class="list-group-item" [ngClass]="{oddClass: odd%2!=0 }"
+                            [ngStyle]="{backgroundColor:odd%2==0 ? 'yellow':'transparent' }" *ngFor="let odd of oddNumber">
+                            {{odd}}</li>
+                    </div>
+                </ng-template>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<p appBasicHighlight>This is basic Custom Directive</p>
+<p [appBetterHighlight]="'yellow'" [defaultColor]="'red'">This is basic Custom Directive</p>
+<br>
+<br>
+
+<ng-template [appUnless]="false">
+<p >Custom Structural Directive</p>
+</ng-template>
+
+<!-- <p *ngIf = "false">Custom Structural Directive</p> -->
+<div [ngSwitch]="value">
+<P *ngSwitchCase="1">Line 1</P>
+<P *ngSwitchCase="10">Line 10</P>
+<P *ngSwitchCase="100">Line 100</P>
+<P *ngSwitchCase="1000">Line 1000</P>
+<P *ngSwitchDefault>This is Default Line</P>
+</div>
+
