@@ -10,7 +10,7 @@ import { AccountComponent } from './components/service-session/account/account.c
 import { NewAccountComponent } from './components/service-session/new-account/new-account.component';
 import { AccountDetailsComponent } from './components/service-session/account-details/account-details.component';
 import { UnlessDirective } from './directive/unless.directive';
-import { LoggerService } from './services/logger.service';
+// import { LoggerService } from './services/logger.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { LoggerService } from './services/logger.service';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [LoggerService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
