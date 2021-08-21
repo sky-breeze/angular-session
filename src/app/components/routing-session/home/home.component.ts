@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
     
   }
 
+  editLoadServer(id:number){
+    this.router.navigate(['/servers'],{queryParams:{allowEdit:id},fragment:'loading'})
+  }
+
 }
