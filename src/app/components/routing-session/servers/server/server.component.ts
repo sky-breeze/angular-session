@@ -30,8 +30,8 @@ export class ServerComponent implements OnInit {
     )
   }
 
-  onEdit(id:string){
-    this.router.navigate(['/servers',id,'edit'])
+  onEdit(){
+    this.router.navigate(['edit'],{relativeTo:this.route,queryParamsHandling: 'preserve'})
   }
 
 }
