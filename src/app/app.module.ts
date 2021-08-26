@@ -22,6 +22,8 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGaurd } from './services/auth-gaurds.service';
 import { AuthService } from './services/auth.service';
+import { CanDeactivateGuard } from './components/routing-session/servers/edit-server/can-deactivate-gaurd.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 
 
@@ -43,6 +45,7 @@ import { AuthService } from './services/auth.service';
     EditServerComponent,
     ServerComponent,
     PageNotFoundComponent,
+    ErrorPageComponent,
     
   ],
   imports: [
@@ -50,7 +53,7 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [ServersService,AuthGaurd,AuthService],
+  providers: [ServersService,AuthGaurd,AuthService,CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
