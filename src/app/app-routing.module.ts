@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/routing-session/home/home.component';
 import { CanDeactivateGuard } from './components/routing-session/servers/edit-server/can-deactivate-gaurd.service';
 import { EditServerComponent } from './components/routing-session/servers/edit-server/edit-server.component';
+import { ServerResolver } from './components/routing-session/servers/server/server-resolver.service';
 import { ServerComponent } from './components/routing-session/servers/server/server.component';
 import { ServersComponent } from './components/routing-session/servers/servers.component';
 import { UserComponent } from './components/routing-session/users/user/user.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
     canActivateChild:[AuthGaurd],
     component:ServersComponent,
     children:[
-  {path:':id',component:ServerComponent},
+  {path:':id',component:ServerComponent, resolve:{'server': ServerResolver}},
   {path:':id/edit',component:EditServerComponent ,canDeactivate:[CanDeactivateGuard]},
   ]},
   // {path:'pagenotfound', component:PageNotFoundComponent},

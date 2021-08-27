@@ -22,17 +22,7 @@ export class EditServerComponent implements OnInit,CanDeactivateGuard {
               private route: ActivatedRoute,
               private router: Router) {
   }
-  canDeactivate(component: CanComponentDeactivate, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
-    console.log('canDeactivate....')
-    if (!this.allowEdit) {
-      return true;
-    }
-    if ((this.serverName !== this.server.name || this.serverStatus !== this.server.status) && !this.changesSaved) {
-      return confirm('Do you want to discard the changes?');
-    } else {
-      return true;
-    }
-  }
+  
   
 
   ngOnInit() {
@@ -61,6 +51,18 @@ export class EditServerComponent implements OnInit,CanDeactivateGuard {
 
   reLoadServer(){
     this.router.navigate(['/servers'])
+  }
+
+  canDeactivate(component: CanComponentDeactivate, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): boolean | Observable<boolean> | Promise<boolean> {
+    console.log('canDeactivate....',this.serverName)
+    if (!this.allowEdit) {
+      return true;
+    }
+    if ((this.serverName !== this.server.name || this.serverStatus !== this.server.status) && !this.changesSaved) {
+      return confirm('Do you want to discard the changes?');
+    } else {
+      return true;
+    }
   }
 
 }
