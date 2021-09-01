@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGaurd } from './services/auth-gaurds.service';
 import { AuthService } from './services/auth.service';
+import { ObserableSessionComponent } from './components/obserable-session/obserable-session.component';
 
 
 
@@ -43,6 +44,7 @@ import { AuthService } from './services/auth.service';
     EditServerComponent,
     ServerComponent,
     PageNotFoundComponent,
+    ObserableSessionComponent,
     
   ],
   imports: [

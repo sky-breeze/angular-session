@@ -2,7 +2,8 @@
     <div class="row">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="">Home</a>
+                <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+                    routerLink="">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" routerLink="servers">Servers</a>
@@ -10,11 +11,14 @@
             <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" [routerLink]="['users']">Users</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" [routerLink]="['obserable']">Obserables</a>
+            </li>
         </ul>
     </div>
     <div class="row">
         <router-outlet>
-            
+
         </router-outlet>
     </div>
 </div>
