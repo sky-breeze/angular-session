@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, observable, Observable, Subscription } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-obserable-session',
@@ -33,9 +34,17 @@ export class ObserableSessionComponent implements OnInit, OnDestroy {
         count++;
       }, 1000)
     });
-    this.mysubscription = myObserable.subscribe(data => {
-      console.log(data)
-    })
+    this.mysubscription = myObserable
+      .pipe(
+        filter((data: any) => {
+          return data > 2;
+        }),
+        map(data => {
+          return `Round : ${data}`
+        }))
+      .subscribe(data => {
+        console.log(data)
+      })
   }
 
 
