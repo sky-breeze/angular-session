@@ -44,6 +44,7 @@ export class ObserableSessionComponent implements OnInit, OnDestroy {
         }))
       .subscribe(data => {
         console.log(data)
+
       })
   }
 

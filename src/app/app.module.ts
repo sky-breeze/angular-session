@@ -23,6 +23,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthGaurd } from './services/auth-gaurds.service';
 import { AuthService } from './services/auth.service';
 import { ObserableSessionComponent } from './components/obserable-session/obserable-session.component';
+import { CanDeactivateGuard } from './components/routing-session/servers/edit-server/can-deactivate-gaurd.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './components/routing-session/servers/server/server-resolver.service';
 
 
 
@@ -45,14 +48,15 @@ import { ObserableSessionComponent } from './components/obserable-session/obsera
     ServerComponent,
     PageNotFoundComponent,
     ObserableSessionComponent,
-    
+    ErrorPageComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [ServersService,AuthGaurd,AuthService],
+  providers: [ServersService, AuthGaurd, AuthService, CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
